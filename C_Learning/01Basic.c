@@ -1,105 +1,125 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include <time.h>
 #include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-void printf_exam() {
+void printf_exam()
+{
 	int a = 1;
 	int b = 2;
 	int c = 3;
 	printf("%d + %d = %d\n", a, b, c);
-    printf("%.2i\n", 2008 % 100);
-    printf("%.3d\n", 8);
-    printf("%.3i\n", 8);
-    printf("%3d\n", 8);
-    printf("%3i\n", 8);
+	printf("%.2i\n", 2008 % 100);
+	printf("%.3d\n", 8);
+	printf("%.3i\n", 8);
+	printf("%3d\n", 8);
+	printf("%3i\n", 8);
 }
 
-void scanf_exam() {
-	printf("ÇëÊäÈëÓ¢³ßºÍÓ¢´ç");
+void scanf_exam()
+{
+	printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¢ï¿½ßºï¿½Ó¢ï¿½ï¿½");
 	double foot;
 	double inch;
 	scanf_s("%lf %lf", &foot, &inch);
 	//float height = (foot + inch / 12) * 0.3048;
-	printf("Éí¸ßÓÐ%lfÃ×\n", ((foot + inch / 12) * 0.3048));
+	printf("ï¿½ï¿½ï¿½ï¿½ï¿½%lfï¿½ï¿½\n", ((foot + inch / 12) * 0.3048));
 }
 
-void time_gap() {
+void time_gap()
+{
 	int hour1, minute1;
 	int hour2, minute2;
-	printf("ÇëÊäÈëµÚ1¸öÊ±¼ä\n");
+	printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½Ê±ï¿½ï¿½\n");
 	scanf_s("%d %d", &hour1, &minute1);
-	printf("ÇëÊäÈëµÚ2¸öÊ±¼ä\n");
+	printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2ï¿½ï¿½Ê±ï¿½ï¿½\n");
 	scanf_s("%d %d", &hour2, &minute2);
-	if (hour1 < hour2) {
-		if (minute1 < minute2) {
-			printf("Á½µØÊ±¼äÏà²î%dÊ±%d·Ö", hour2 - hour1, minute2 - minute1);
+	if (hour1 < hour2)
+	{
+		if (minute1 < minute2)
+		{
+			printf("ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½%dÊ±%dï¿½ï¿½", hour2 - hour1, minute2 - minute1);
 		}
-		else {
-			printf("Á½µØÊ±¼äÏà²î%dÊ±%d·Ö", hour2 - hour1 - 1, minute2 + 60 - minute1);
+		else
+		{
+			printf("ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½%dÊ±%dï¿½ï¿½", hour2 - hour1 - 1, minute2 + 60 - minute1);
 		}
 	}
-	else {
-		if (minute1 < minute2) {
-			printf("Á½µØÊ±¼äÏà²î%dÊ±%d·Ö", hour1 - hour2 - 1, minute1 + 60 - minute2);
+	else
+	{
+		if (minute1 < minute2)
+		{
+			printf("ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½%dÊ±%dï¿½ï¿½", hour1 - hour2 - 1, minute1 + 60 - minute2);
 		}
-		else {
-			printf("Á½µØÊ±¼äÏà²î%dÊ±%d·Ö", hour1 - hour2, minute1 - minute2);
+		else
+		{
+			printf("ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½%dÊ±%dï¿½ï¿½", hour1 - hour2, minute1 - minute2);
 		}
 	}
 }
 
-void time_gap2() { // ÅÐ¶ÏÊ±¼ä²î
+void time_gap2()
+{ // ï¿½Ð¶ï¿½Ê±ï¿½ï¿½ï¿½
 	int hour1, minute1;
 	int hour2, minute2;
-	printf("ÇëÊäÈëµÚ1¸öÊ±¼ä\n");
+	printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½Ê±ï¿½ï¿½\n");
 	scanf_s("%d %d", &hour1, &minute1);
-	printf("ÇëÊäÈëµÚ2¸öÊ±¼ä\n");
+	printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2ï¿½ï¿½Ê±ï¿½ï¿½\n");
 	scanf_s("%d %d", &hour2, &minute2);
 	int gap = (hour2 - hour1) * 60 + minute2 - minute1;
-	if (gap > 0) {
-		printf("Á½µØÊ±¼äÏà²î%dÊ±%d·Ö", gap / 60, gap % 60);
+	if (gap > 0)
+	{
+		printf("ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½%dÊ±%dï¿½ï¿½", gap / 60, gap % 60);
 	}
-	else {
-		printf("Á½µØÊ±¼äÏà²î%dÊ±%d·Ö", -gap / 60, -gap % 60);
+	else
+	{
+		printf("ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½%dÊ±%dï¿½ï¿½", -gap / 60, -gap % 60);
 	}
 }
 
-void integer_num() { // ÅÐ¶ÏÒ»¸öÕûÊýµÄÎ»Êý
-	printf("ÇëÊäÈëÒ»¸öÊý");
+void integer_num()
+{ // ï¿½Ð¶ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
+	printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½");
 	int num;
 	scanf_s("%d", &num);
-	if (num < 0) { // µ±ÊäÈëµÄÖµÎª¸ºÖµÊ±£¡
-		printf("¸ºÊý£¡\n");
+	if (num < 0)
+	{ // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÖµÎªï¿½ï¿½ÖµÊ±ï¿½ï¿½
+		printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n");
 		num = -num;
 	}
 	int n = 0;
-	do {
+	do
+	{
 		n++;
 		num /= 10;
 	} while (num > 0);
-	printf("ÄúËùÊäÈëµÄÊýÓÐ%dÎ»\n", n);
+	printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½%dÎ»\n", n);
 }
 
-void guess_the_num() {
+void guess_the_num()
+{
 	srand((unsigned int)time(0));
 	//    printf("");
 	int real_num = rand() % 100 + 1;
 	int input = -1;
 	int count = 0;
 	printf("i have set up a number,please input a number:");
-	do {
+	do
+	{
 		scanf_s("%d", &input);
 		count++;
-		if (input < real_num) {
+		if (input < real_num)
+		{
 			printf("less than the real number!\n");
 			//continue;
 		}
-		else if (input > real_num) {
+		else if (input > real_num)
+		{
 			printf("bigger than the real number!\n");
 			//continue;
 		}
-		else {
+		else
+		{
 			break;
 		}
 		printf("try again:");
@@ -107,11 +127,13 @@ void guess_the_num() {
 	printf("right hit!\n");
 }
 
-void how_to_use_rand() {
+void how_to_use_rand()
+{
 	time_t t;
 	srand((unsigned int)time(&t));
 	int random;
-	for (int x = 0; x < 10; ++x) {
+	for (int x = 0; x < 10; ++x)
+	{
 		random = rand() % 100 + 1;
 		printf("\n%d", random);
 	}
@@ -122,15 +144,17 @@ void how_to_use_rand() {
 	//    between implementations but it is granted to be at least 32767.
 }
 
-void get_the_average() {
-	//    printf("ÇëÊäÈëÒ»¸öÊý");
+void get_the_average()
+{
+	//    printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½");
 	float num = 0;
 	float avg = 0;
 	float sum = 0;
 	int count = 0;
 	printf("please input the NO.%d number:", count + 1);
 	scanf_s("%f", &num);
-	while (num != -1) {
+	while (num != -1)
+	{
 		sum += num;
 		count++;
 		printf("please input the NO.%d number:", count + 1);
@@ -152,15 +176,18 @@ void get_the_average() {
 	//
 }
 
-void get_the_average2() {
+void get_the_average2()
+{
 	float num = 0;
 	float avg = 0;
 	float sum = 0;
 	int count = 0;
-	do {
+	do
+	{
 		printf("please input the NO.%d number:", count + 1);
 		scanf_s("%f", &num);
-		if (num != -1) {
+		if (num != -1)
+		{
 			sum += num;
 			count++;
 		}
@@ -169,28 +196,38 @@ void get_the_average2() {
 	printf("%f\n", avg);
 }
 
-void sushu(int num) {
+void sushu(int num)
+{
 	int i;
-	int tag = 0; // tag == 0±íÊ¾ÊÇËØÊý
-	for (i = 2; i <= num / 2; ++i) {
-		if (num % i == 0) {
+	int tag = 0; // tag == 0ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	for (i = 2; i <= num / 2; ++i)
+	{
+		if (num % i == 0)
+		{
 			tag = 1;
 			break;
 		}
 	}
-	if (tag == 0) {
+	if (tag == 0)
+	{
 		printf("%d is a sushu\n", num);
 	}
-	else {
+	else
+	{
 		printf("%d is not a sushu\n", num);
 	}
 }
 
-void how_to_gather_100() { // ÓÃ1,2,5ÔªµÄ×éºÏÈ¥»ñÈ¡100Ôª£¬ÁÐ¾Ù³öËùÓÐ½á¹û¡£
-	for (int one = 0; one <= 100; ++one) {
-		for (int two = 0; two <= 50; ++two) {
-			for (int five = 0; five <= 20; ++five) {
-				if (one + two * 2 + five * 5 == 100) {
+void how_to_gather_100()
+{ // ï¿½ï¿½1,2,5Ôªï¿½ï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½È¡100Ôªï¿½ï¿½ï¿½Ð¾Ù³ï¿½ï¿½ï¿½ï¿½Ð½ï¿½ï¿½ï¿½ï¿½
+	for (int one = 0; one <= 100; ++one)
+	{
+		for (int two = 0; two <= 50; ++two)
+		{
+			for (int five = 0; five <= 20; ++five)
+			{
+				if (one + two * 2 + five * 5 == 100)
+				{
 					printf("%d\t%d\t%d\n", one, two, five);
 				}
 			}
@@ -198,12 +235,17 @@ void how_to_gather_100() { // ÓÃ1,2,5ÔªµÄ×éºÏÈ¥»ñÈ¡100Ôª£¬ÁÐ¾Ù³öËùÓÐ½á¹û¡£
 	}
 }
 
-void how_to_gather_100_2() { // ÓÃ1,2,5ÔªµÄ×éºÏÈ¥»ñÈ¡100Ôª£¬Ò»µ©»ñÈ¡µ½Ò»¸ö½á¹û£¬¾ÍÌø³öÑ­»·¡£
+void how_to_gather_100_2()
+{ // ï¿½ï¿½1,2,5Ôªï¿½ï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½È¡100Ôªï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ­ï¿½ï¿½ï¿½ï¿½
 	int exit = 0;
-	for (int one = 0; one <= 100; ++one) {
-		for (int two = 0; two <= 50; ++two) {
-			for (int five = 0; five <= 20; ++five) {
-				if (one + two * 2 + five * 5 == 100) {
+	for (int one = 0; one <= 100; ++one)
+	{
+		for (int two = 0; two <= 50; ++two)
+		{
+			for (int five = 0; five <= 20; ++five)
+			{
+				if (one + two * 2 + five * 5 == 100)
+				{
 					printf("%d\t%d\t%d\n", one, two, five);
 					exit = 1;
 					break;
@@ -217,12 +259,17 @@ void how_to_gather_100_2() { // ÓÃ1,2,5ÔªµÄ×éºÏÈ¥»ñÈ¡100Ôª£¬Ò»µ©»ñÈ¡µ½Ò»¸ö½á¹û£¬
 	}
 }
 
-void how_to_gather_100_3() { // ÓÃ1,2,5ÔªµÄ×éºÏÈ¥»ñÈ¡100Ôª£¬Ò»µ©»ñÈ¡µ½Ò»¸ö½á¹û£¬¾ÍÌø³öÑ­»·¡£
+void how_to_gather_100_3()
+{ // ï¿½ï¿½1,2,5Ôªï¿½ï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½È¡100Ôªï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ­ï¿½ï¿½ï¿½ï¿½
 	int exit = 0;
-	for (int one = 0; one <= 100; ++one) {
-		for (int two = 0; two <= 50; ++two) {
-			for (int five = 0; five <= 20; ++five) {
-				if (one + two * 2 + five * 5 == 100) {
+	for (int one = 0; one <= 100; ++one)
+	{
+		for (int two = 0; two <= 50; ++two)
+		{
+			for (int five = 0; five <= 20; ++five)
+			{
+				if (one + two * 2 + five * 5 == 100)
+				{
 					printf("%d\t%d\t%d\n", one, two, five);
 					goto out;
 				}
@@ -231,13 +278,13 @@ void how_to_gather_100_3() { // ÓÃ1,2,5ÔªµÄ×éºÏÈ¥»ñÈ¡100Ôª£¬Ò»µ©»ñÈ¡µ½Ò»¸ö½á¹û£¬
 	}
 out:
 	return;
-	
-
 }
 
-int get_digits(int num) {
+int get_digits(int num)
+{
 	int n = 1;
-	while (num >= 10) {
+	while (num >= 10)
+	{
 		num /= 10;
 		n++;
 	}
@@ -245,63 +292,69 @@ int get_digits(int num) {
 	return n;
 }
 
-void ordered_output(int num) {
+void ordered_output(int num)
+{
 	int quotient;
 	int ten_power;
 	int i = get_digits(num);
 	//    printf("i=%d", i);
-	do {
-		ten_power = powf(10, --i); // ÒªÓÈÎª×¢ÒâÕâ¸öÍæÒâ£¡
+	do
+	{
+		ten_power = powf(10, --i); // Òªï¿½ï¿½Îª×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â£¡
 		quotient = num / ten_power;
 		num = num % ten_power;
 		printf("%d", quotient);
-		if (i > 0) {
+		if (i > 0)
+		{
 			printf(" ");
 		}
 	} while (i > 0);
-	    printf("\n");
+	printf("\n");
 }
 
-void float_double_ecample() {
+void float_double_ecample()
+{
 	/*char c = 127;
 	c += 1;
 	printf("%d\n", c);
 	printf("%d\n", c);
 	c = -128;
 	c -= 1;*/
-    float f = 10.23f;
-    printf("%e\n", f);
-    //scanf("");
-    double ff = 1E-10;
-    printf("%.12lf\n", ff); // .12±íÊ¾Êä³öÓÐÐ§Î»µÄ¸öÊý
-    double fff = 1E10;
-    printf("%4lf\n", fff);
+	float f = 10.23f;
+	printf("%e\n", f);
+	//scanf("");
+	double ff = 1E-10;
+	printf("%.12lf\n", ff); // .12ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½Ð§Î»ï¿½Ä¸ï¿½ï¿½ï¿½
+	double fff = 1E10;
+	printf("%4lf\n", fff);
 }
 
-void float_double_ecample2() {
-    /*printf("%f\n", 12.0 / 0.0);
+void float_double_ecample2()
+{
+	/*printf("%f\n", 12.0 / 0.0);
     printf("%f\n", -12.0 / 0.0);
     printf("%f\n", 0.0 / 0.0);*/
 }
 
-void char_exam() {
-    int i = 49;
-    char c = i;
-    printf("%c\n", c);
+void char_exam()
+{
+	int i = 49;
+	char c = i;
+	printf("%c\n", c);
 }
 
 //int main() {
-	//    printf_exam();
-	//    scanf_exam();
-	//    printf("%f\n", 10.0 / 3 * 3);
-	//    time_gap2();
-	//    integer_num();
-	//    guess_the_num();
-	//    how_to_use_rand();
-	//    get_the_average();
-	//    how_to_gather_100();
-	//    how_to_gather_100_3();
-	    /*ordered_output(0);
+//    printf_exam();
+//    scanf_exam();
+//    printf("%f\n", 10.0 / 3 * 3);
+//    time_gap2();
+//    integer_num();
+//    guess_the_num();
+//    how_to_use_rand();
+//    get_the_average();
+//    how_to_gather_100();
+//    how_to_gather_100_3();
+/*ordered_output(0);
 	    ordered_output(1);
 	    ordered_output(12);
 	    ordered_output(10);
@@ -310,10 +363,10 @@ void char_exam() {
 	    ordered_output(8000);
 	    ordered_output(80000);
 	    ordered_output(800000);*/
-	//    get_digits(80001);
-	//    get_digits(70000);
-	//    printf("%f\n",powf(10, 2));
-	//    printf("%f\n",powf(10, 3));
-	//float_double_ecample2();
+//    get_digits(80001);
+//    get_digits(70000);
+//    printf("%f\n",powf(10, 2));
+//    printf("%f\n",powf(10, 3));
+//float_double_ecample2();
 //    char_exam();
 //}
