@@ -32,11 +32,21 @@ void test03()
     }
 
     // printf("%d\n", 1);
+    printf("======================================================\n");
 }
 void test04()
 {
-    int vector[5];
+    int vector[5] = {1, 3, 5, 7, 9};
     int *pv = vector;
+    printf("vector %p\n", vector);
+    printf("&vector %p\n", &vector);
+    printf("&vector[0] %p\n", &vector[0]);
+    printf("pv %p\n", pv);
+    printf("*pv %d\n", *pv);
+    printf("*(pv + 1) %d\n", *(pv + 1));
+    printf("*(++pv) %d\n", *(++pv));
+    printf("*(vector + 1) %d\n", *(vector + 1));
+    // printf("*(vector + 1) %d\n", *(vector++)); // lvalue required as increment operand
     printf("======================================================\n");
 }
 
