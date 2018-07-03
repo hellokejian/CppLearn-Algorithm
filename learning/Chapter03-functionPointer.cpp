@@ -109,6 +109,12 @@ void funptr_array()
     typedef int (*operation)(int, int);
     operation operations[128] = {NULL};
     int (*operations2[128])(int, int) = {NULL};
+    // examples of using funptr array
+    string (*oper[300])(string *);
+    oper['+'] = sayHello;
+    string str = "chenqi";
+    // printf("%s\n", oper['+'](&str));
+    std::cout << oper['+'](&str) << '\n';
 }
 
 int main()
