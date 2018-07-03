@@ -149,6 +149,7 @@ char *getLine02(void)
         if (++length >= maxLength)
         {
             realloc(buffer, maxLength += sizeIncrement);
+            printf("reallocating...\n");
             if (buffer == NULL)
             {
                 free(buffer);
@@ -162,10 +163,68 @@ char *getLine02(void)
     *currentPosition = '\0';
     return buffer;
 }
+
 void testGetLine()
 {
-    // char *result =
-    std::cout << getLine02() << '\n';
+    // char *result = getLine02();
+    // std::cout << result << '\n';
+}
+
+/*========================================4.5 array as a parameter=========================================*/
+void arrayAsParam01(int arr[], int size)
+{
+
+    for (int i = 0; i < size; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    printf("======================================================\n");
+}
+void testArrayAsParam01()
+{
+    int arr[5] = {1, 2, 3, 4, 5};
+    arrayAsParam01(arr, 5);
+}
+
+void arrayAsParam02(int *arr, int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        // printf("%d ", arr[i]); // legal, first method
+        printf("%d ", *(arr + i));
+    }
+    printf("\n======================================================\n");
+}
+
+void testArrayAsParam02()
+{
+    int arr[5] = {6, 7, 8, 9, 10};
+    arrayAsParam02(arr, 5);
+}
+
+void useArrayWithPointer()
+{
+    int *arr[5];
+
+    for (int i = 0; i < 5; i++)
+    {
+        arr[i] = (int *)malloc(sizeof(int)); // is equal to *(arr + i) = (int*)malloc(sizeof(int));
+        *arr[i] = i;                         // is equal to **(arr + i) = i;
+    }
+
+    for (int i = 0; i < 5; i++)
+    {
+        printf("%d ", *arr[i]);
+    }
+    printf("\n======================================================\n");
+}
+
+void testUseArrayWithPointer()
+{
+    int *arr = (int *)malloc(5 * sizeof(int));
+    delete[] arr;
+    useArrayWithPointer();
 }
 
 void test()
@@ -183,6 +242,9 @@ int main(int argc, char const *argv[])
     useReallocToAdjustArrayLength();
     // getLine();
     testGetLine();
+    testArrayAsParam01();
+    testArrayAsParam02();
+    testUseArrayWithPointer();
     system("pause");
     return 0;
 }
