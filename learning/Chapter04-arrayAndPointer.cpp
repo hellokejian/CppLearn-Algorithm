@@ -61,6 +61,37 @@ void dynamicMalloc01()
 /*==============================动态分配二维数组：分配连续的内存==============================*/
 void dynamicMalloc02()
 {
+    int rows = 3;
+    int cols = 4;
+    int **matrix = (int **)malloc(rows * sizeof(int *));
+    matrix[0] = (int *)malloc(rows * cols * sizeof(int));
+
+    for (int i = 1; i < cols; i++)
+    {
+        matrix[i] = matrix[0] + i * cols;
+    }
+
+    delete[] matrix;
+}
+
+void dynamicMalloc03()
+{
+    int rows = 3;
+    int cols = 4;
+    int *matrix = (int *)malloc(rows * cols * sizeof(int));
+
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < cols; j++)
+        {
+            *(matrix + (i * cols) + j) = i + j;
+        }
+    }
+    delete[] matrix;
+}
+
+/*==============================不规则数组与指针==============================*/
+void irregularArray(){
     
 }
 
@@ -69,5 +100,7 @@ int main(int argc, char const *argv[])
     usePointerAndArray01();
     testDisplay2DArray01();
     dynamicMalloc01();
+    dynamicMalloc02();
+    dynamicMalloc03();
     return 0;
 }
