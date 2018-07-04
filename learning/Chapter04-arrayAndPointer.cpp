@@ -5,13 +5,15 @@ void usePointerAndArray01()
 {
     int matrix[2][5] = {{1, 2, 3, 4, 4}, {6, 7, 8, 9, 10}};
     int(*pmatrix)[5] = matrix;
-    printf("%p\n", pmatrix);
-    printf("%p\n", pmatrix + 1);
-    printf("*pmatrix=%zu\n", sizeof(*pmatrix));
-    printf("*pmatrix[1]=%zu\n", sizeof(*pmatrix[1]));
-    printf("matrix[0] + 1 address =%p, matrix[0] + 1 value = %d\n", matrix[0] + 1, *(matrix[0] + 1));
+    printf("pmatrix = %p\n", pmatrix);
+    printf("pmatrix + 1 = %p\n", pmatrix + 1);
+    printf("pmatrix[0] + 1 = %p\n", pmatrix[0] + 1);
+    printf("*sizeof(*pmatrix) = %zu\n", sizeof(*pmatrix));
+    printf("sizeof(*pmatrix[1]) = %zu\n", sizeof(*pmatrix[1]));
+    printf("matrix[0] + 1 address = %p, matrix[0] + 1 value = %d\n", matrix[0] + 1, *(matrix[0] + 1));
     printf("pmatrix[0] + 1 value = %p\n", pmatrix[0] + 1);
     printf("\n============================================================================\n");
+    // int (*ppmatrix)[5] = matrix;
 }
 
 /*===============================passing a multi-dimensional array===============================*/
@@ -64,7 +66,7 @@ void dynamicMalloc02()
     int rows = 3;
     int cols = 4;
     int **matrix = (int **)malloc(rows * sizeof(int *));
-    matrix[0] = (int *)malloc(rows * cols * sizeof(int));
+    matrix[0] = (int *)malloc(rows * cols * sizeof(int));  // 通过第一行的地址定位其它行的地址
 
     for (int i = 1; i < cols; i++)
     {
@@ -80,7 +82,7 @@ void dynamicMalloc03()
     int cols = 4;
     int *matrix = (int *)malloc(rows * cols * sizeof(int));
 
-    for (int i = 0; i < rows; i++)
+    for (int i = 0; i < rows; i++) // 不能使用下标定位元素，必须手动计算索引
     {
         for (int j = 0; j < cols; j++)
         {
@@ -91,16 +93,22 @@ void dynamicMalloc03()
 }
 
 /*==============================不规则数组与指针==============================*/
-void irregularArray(){
-    
+void irregularArray()
+{
+    // int(*(arr1[])) = {
+    //     (int[3]){1, 2, 3},
+    //     (int[3]){4, 5, 6},
+    //     (int[3]){7, 8, 9},
+    // }
 }
 
 int main(int argc, char const *argv[])
 {
     usePointerAndArray01();
     testDisplay2DArray01();
-    dynamicMalloc01();
-    dynamicMalloc02();
-    dynamicMalloc03();
+    // dynamicMalloc01();
+    // dynamicMalloc02();
+    // dynamicMalloc03();
+    // irregularArray();
     return 0;
 }
