@@ -8,8 +8,7 @@
 
 #include <iostream>
 #include <string>
-#include <pointer>
-
+#include <vector>
 using namespace std;
 
 void printPointerVariable()
@@ -19,7 +18,7 @@ void printPointerVariable()
     cout << &name << " " << name << endl;
     cout << &p1 << " " << p1 << " " << *p1 << endl;
     printf("p1 with %%p : %p\n", p1);
-    printf("p1 with %%x : %x\n", p1);
+    // printf("p1 with %%x : %x\n", p1);
     printf("%p\n", (void *)p1);
     //    p1 = 0;
     p1 = nullptr;
@@ -45,7 +44,7 @@ void voidPointer()
 void sizeOfTest()
 {
     printf("sizeof(void *) = %zu\n", sizeof(void *));
-    printf("sizeof(void) = %zu\n", sizeof(void));
+    // printf("sizeof(void) = %zu\n", sizeof(void));
     printf("sizeof(char *) = %zu\n", sizeof(char *));
     printf("sizeof(char) = %zu\n", sizeof(char));
     printf("sizeof(int *) = %zu\n", sizeof(int *));
@@ -53,20 +52,20 @@ void sizeOfTest()
 }
 
 // 存放指针地址
-void intptr_t_test()
-{
-    // intptr_t can be used to store the pointer
-    int num;
-    intptr_t pi = &num;
-}
+// void intptr_t_test()
+// {
+//     // intptr_t can be used to store the pointer
+//     int num;
+//     intptr_t pi = &num;
+// }
 
 // 存放指针差值
-void ptrdiff_t_test(){
-    int vector[4] = {1, 2, 3, 4};
-    int p1 = vector;
-    int p2 = p1 + 2;
-    
-}
+// void ptrdiff_t_test()
+// {
+//     int vector[4] = {1, 2, 3, 4};
+//     int *p1 = vector;
+//     int *p2 = p1 + 2;
+// }
 
 int main()
 {
@@ -115,7 +114,7 @@ void pointer3()
     printf("%zu\n", sizeof(void *));
     printf("%zu\n", sizeof(char *));
     printf("%zu\n", sizeof(int *));
-    printf("%d\n", sizeof(void *));
+    // printf("%d\n", sizeof(void *));
 }
 
 void pointer4()
@@ -159,7 +158,7 @@ void pointer5()
     printf("%p\n", pv);
     size_t sv = sizeof(temp);
     printf("%zu\n", sv);
-    pv += 4;
+    // pv += 4;
     printf("%p\n", pv);
 }
 

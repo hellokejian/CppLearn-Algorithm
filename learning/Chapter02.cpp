@@ -51,6 +51,8 @@ int main(int argc, char const *argv[])
     printf("===================================\n");
     passingAddressOfConstantsTest();
     printf("===================================\n");
+    system("pause");
     return 0;
+    system("pause");
     /* 你好啊 */
 }
