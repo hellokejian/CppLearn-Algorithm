@@ -48,7 +48,7 @@ void passingAddressOfConstantsTest()
 int main(int argc, char const *argv[])
 {
     mallocTest();
-    printf("==================================\n");
+    printf("===================================\n");
     passingAddressOfConstantsTest();
     printf("==================================\n");
     return 0;
