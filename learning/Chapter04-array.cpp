@@ -69,6 +69,10 @@ void differenceBetweenArrayAndPointer()
     printf("======================================================\n");
 }
 
+void dArray(){
+
+}
+
 void useMallocToCreateAnArray()
 {
     char *pv = (char *)malloc(5 * sizeof(char));

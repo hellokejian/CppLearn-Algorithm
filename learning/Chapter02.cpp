@@ -45,13 +45,14 @@ void passingAddressOfConstantsTest()
     passingAddressOfConstants(&l1, &l2);
 }
 
-
-
 int main(int argc, char const *argv[])
 {
     mallocTest();
-    printf("=================================\n");
+    printf("===================================\n");
     passingAddressOfConstantsTest();
-    printf("=================================\n");
+    printf("===================================\n");
+    system("pause");
     return 0;
+    system("pause");
+    /* 你好啊 */
 }
