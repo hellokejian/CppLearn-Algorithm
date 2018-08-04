@@ -42,6 +42,7 @@ void testDisplay2DArray01()
 {
     int arr[2][3] = {1, 2, 3, 4, 5, 6}; // {{1, 2, 3}, {4, 5, 6}};
     display2DArray01(&arr[0][0], 2, 3);
+    // display2DArray01(&arr[0], 2, 3); // 不可以
     // display2DArray01(arr[0], 2, 3);  // can also work;
     // display2DArray01(&arr[0][0], 2, 3);
 }
@@ -104,7 +105,7 @@ void irregularArray()
 
 int main(int argc, char const *argv[])
 {
-    usePointerAndArray01();
+    // usePointerAndArray01();
     testDisplay2DArray01();
     // dynamicMalloc01();
     // dynamicMalloc02();
